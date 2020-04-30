@@ -12,9 +12,12 @@
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:inputType="number"
         android:maxLength="1"
-        app:layout_constraintEnd_toStartOf="@+id/editText3"
+
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -27,8 +30,8 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:maxLength="1"
-        app:layout_constraintEnd_toStartOf="@+id/editText4"
-        app:layout_constraintStart_toEndOf="@+id/editText3"
+        app:layout_constraintEnd_toStartOf="@+id/editText3"
+        app:layout_constraintStart_toEndOf="@+id/editText1"
         app:layout_constraintTop_toTopOf="@+id/editText3" />
 
 
@@ -38,8 +41,8 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:maxLength="1"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
-        app:layout_constraintStart_toEndOf="@+id/editText1"
+        app:layout_constraintEnd_toStartOf="@+id/editText4"
+        app:layout_constraintStart_toEndOf="@+id/editText2"
         app:layout_constraintTop_toTopOf="@+id/editText1" />
 
 
@@ -50,8 +53,8 @@
         android:inputType="number"
         android:maxLength="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText2"
-        app:layout_constraintTop_toTopOf="@+id/editText2" />
+        app:layout_constraintStart_toEndOf="@+id/editText3"
+        app:layout_constraintTop_toTopOf="@+id/editText1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
