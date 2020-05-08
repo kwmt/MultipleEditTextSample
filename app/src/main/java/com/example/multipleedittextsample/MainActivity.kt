@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {
                 val input = p0?.toString() ?: return
                 if (input.length == 1) {
+                    Log.d(TAG, "onTextChanged $p0")
                     current.clearFocus()
                     next?.run {
                         requestFocus()
@@ -43,22 +44,29 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                Log.d("a", "$p0")
+                Log.d(TAG, "beforeTextChanged: $p0")
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                Log.d("a", "$p0")
+                Log.d(TAG, "onTextChanged $p0")
             }
         })
 
         next?.setOnKeyListener { v, keyCode, event -> //You can identify which key pressed buy checking keyCode value with KeyEvent.KEYCODE_
-            if (keyCode == KeyEvent.KEYCODE_DEL) {
+            if (keyCode == KeyEvent.KEYCODE_DEL
+                    && event.action == KeyEvent.ACTION_DOWN
+            ) {
+                Log.d(TAG, "onkey called $event")
                 next.clearFocus()
                 current.requestFocus()
                 current.setText("")
             }
             false
         }
+    }
+
+    companion object {
+         val TAG = MainActivity::class.java.simpleName
     }
 
 }
